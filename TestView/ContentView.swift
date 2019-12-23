@@ -12,14 +12,12 @@ struct ContentView: View {
 	@State private var cards = [Card](repeating: Card.example, count: 10)
 	
 	var body: some View {
-		VStack {
-			ForEach(0..<cards.count, id: \.self) { index in
-				CardView(card: self.cards[index]) {
-				}
+		ForEach(0..<cards.count, id: \.self) { index in
+			CardView() {
 			}
 		}
 	}
-	
+		
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -27,4 +25,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-

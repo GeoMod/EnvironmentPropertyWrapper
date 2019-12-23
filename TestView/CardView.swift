@@ -9,11 +9,8 @@
 import SwiftUI
 
 struct CardView: View {
-	let card: Card
-	
 	@Environment(\.accessibilityDifferentiateWithoutColor) var differentiateWithoutColor
 	var removal: (() -> Void)? = nil
-	
 	
 	var body: some View {
 		Text("Hello Card")
