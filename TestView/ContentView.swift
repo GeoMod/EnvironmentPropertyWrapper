@@ -9,9 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
-    }
+	@State private var cards = [Card](repeating: Card.example, count: 10)
+	
+	var body: some View {
+		VStack {
+			ForEach(0..<cards.count, id: \.self) { index in
+				CardView(card: self.cards[index]) {
+				}
+			}
+		}
+	}
+	
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -19,3 +27,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
